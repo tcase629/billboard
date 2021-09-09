@@ -3,7 +3,7 @@ class SongsController < ApplicationController
   
   def index
     @songs = @artists.songs
-    render component: 'Song', props: { songs: @songs, Artist: @artist }
+    render component: 'Song', props: { songs: @songs, artist: @artist }
   end
 
   def show

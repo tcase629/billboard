@@ -1,4 +1,4 @@
 class Playlist < ApplicationRecord
   has_many :artists, dependent: :destroy
-  validates :artist, :genre, presence: true 
+  validates :artist, presence: true 
 end
