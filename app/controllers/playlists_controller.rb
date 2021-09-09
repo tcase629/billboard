@@ -18,9 +18,9 @@ class PlaylistsController < ApplicationController
   def create
     @playlist = Playlist.new(playlist_params)
     if @playlist.save
-      redirect_to playlists_path
+      redirect_to root_path
     else
-      render component: 'PlaylistNew', props: { model_name: @playlist }
+      render component: 'PlaylistNew', props: { playlist: @playlist }
     end
   end
 
@@ -32,7 +32,7 @@ class PlaylistsController < ApplicationController
   def update
     @playlist = Playlist.find(params[:id])
     if @playlist.update(playlist_params)
-      redirect_to playlists_path
+      redirect_to root_path
     else
       render component: 'PlaylistEdit', props: { playlist: @playlist }
     end
@@ -41,12 +41,12 @@ class PlaylistsController < ApplicationController
   def destroy
     @playlist = Playlist.find(params[:id])
     @playlist.destroy
-    redirect_to playlists_path
+    redirect_to root_path
   end
 
   private
     def playlist_params
-      params.require(:playlist).permit(:artist, :genre)
+      params.require(:playlist).permit(:artist)
     end
 
 end
