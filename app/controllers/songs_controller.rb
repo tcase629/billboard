@@ -3,7 +3,7 @@ class SongsController < ApplicationController
   
   def index
     @songs = @artists.songs
-    render component: 'Song', props: { songs: @songs, Artist: @artist }
+    render component: 'Song', props: { songs: @songs, artist: @artist }
   end
 
   def show
@@ -21,7 +21,7 @@ class SongsController < ApplicationController
     if @song.save
       redirect_to root_path
     else
-      render component: 'SongNew' props: { song: @song, artist: @artist}
+      render component: 'SongNew', props: { song: @song, artist: @artist}
     end
   end
 
