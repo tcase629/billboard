@@ -2,7 +2,7 @@ import React from 'react';
 
 const PlaylistEdit = ({ playlist }) => {
   const { artist, id } = playlist
-  const defaultName = artist ? artist : ""
+  const defaultArtist = artist ? artist : ""
   // const defaultAge = age ? age : ""
   return (
     <>
@@ -12,7 +12,7 @@ const PlaylistEdit = ({ playlist }) => {
         <input type="hidden" name="_method" value="patch" />
         <input
           type="text"
-          defaultValue={defaultName}
+          defaultValue={defaultArtist}
           name="playlist[artist]"
         />
         {/* <input
