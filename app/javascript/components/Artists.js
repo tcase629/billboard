@@ -26,3 +26,5 @@ const Artists = ({ playlist, artists }) => {
 }
 
 export default Artists;
+
+// Kat's Comment
